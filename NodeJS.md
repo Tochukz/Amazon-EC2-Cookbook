@@ -1,6 +1,6 @@
-## Configure Node.JS Server on Ubunut using PM2 and Nginx Reverse Proxy
+## Configure Node.JS Server on Ubuntu using PM2 and Nginx Reverse Proxy
 __Installing Node.js using NVM__  
-Inastall NVM on ubuntub using a shell script obtained via curl
+Install NVM on ubuntu using a shell script obtained via curl
 ```
 $ curl  https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 ```
@@ -78,7 +78,7 @@ server {
 ```
 Check for Nginx configuration file syntax correctness
 ```
-$ suo nginx -t
+$ sudo nginx -t
 ```
 Restart Nginx
 ```

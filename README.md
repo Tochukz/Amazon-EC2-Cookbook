@@ -2,6 +2,16 @@
 __By Sekhar Reddy and Autobindo Sarkar__  
 
 ## Chapter 1: Selecting and Configuring Amazon EC2 Instances  
+__Introduction__  
+You need to ask yourself several questions in order to choose the right AWS EC2 instance for meeting your requirements.
+1. What is the primary purpose of the EC2 instance being provisioned?
+2. What is the duration of your need for a particular machine?
+3. Do you need high performance storage?
+4. Should you go for dedicated or shared tenancy?
+5. Will the machine be used for compute-intensive or memory-intensive processing?
+6. What are the scalability, availability, and security requirements?
+7. What are your networking requirements?
+
 __Choosing the right AWS EC2 instance types__  
 If you require higher storage performance, then ensure that the EC2 instance type you choose supports SSD.  
 There are three distinct purchasing options available for provisioning the AWS EC2 instances:  
@@ -204,8 +214,13 @@ To associate the EIP to the ENI
 $ aws ec2 associate-address --network-interface-id eni-5c88f739 --allocation-id eipalloc-d59f80b7 --private-ip-address 10.0.0.26
 ```
 
+-- Todo: Continue fron page 27 - Allocating Elastic IP addresses
+
 __Windows Instance__   
 [How to connect you instance](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/connecting_to_windows_instance.html?icmpid=docs_ec2_console)
 [Free Tier](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsm.page-all-free-tier=1&awsf.Free%20Tier%20Types=tier%2312monthsfree)
 [AWS EC2 Forum](https://forums.aws.amazon.com/forum.jspa?forumID=30)  
 [EC2 Windows Guide](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/concepts.html)
+
+
+## Chapter 2: Configuring and Securing a Virtual Private Cloud  
