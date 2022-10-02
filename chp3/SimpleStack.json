@@ -1,0 +1,84 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "A simple template for PHP Web application",
+    "Parameters": {
+        "ImageId": {
+            "Description": "AMI ID with Ubuntu 20.04 AMI as default",
+            "Type": "String",
+            "Default": "ami-0bd2099338bc55e6d"
+        },
+        "InstanceType": {
+            "Description": "EC2 instance with t2.micro as default",
+            "Type": "String",
+            "Default": "t2.micro",
+            "AllowedValues": [
+                "t2.small",
+                "t2.medium",
+                "m1.small",
+                "m1.medium",
+                "m3.medium",
+                "m3.large"
+            ]
+        },
+        "VpcId": {
+            "Type": "String",
+            "Description": "VPC ID with user created VPC as default",
+            "Default": "vpc-0cb5fed747cec451a"
+        },
+        "Subnets": {
+            "Type": "CommaDelimitedList",
+            "Description": "Subnet id's list. with tow user  created subnets as default",
+            "Default": "subnet-06d8636442c2de41c, subnet-09a05ef9ed4f1ccbc"
+        },
+        "KeyPairName": {
+            "Description": "EC2 Key Pair to allow SSH access to the instances user's key as default",
+            "Type": "String",
+            "Default": "AmzLinuxKey2"
+        },
+        "NameForNewInstances": {
+            "Description": "Name for the instances",
+            "Type": "String",
+            "Default": "Simple-Ubuntu-20-04-Instance "
+        }
+    },
+    "Mappings": {},
+    "Resources": {
+        "MyEC2Instance": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "ImageId": {
+                    "Ref": "ImageId"
+                },
+                "InstanceType": {
+                    "Ref": "InstanceType"
+                },
+                "KeyName": {
+                    "Ref": "KeyPairName"
+                },
+                "BlockDeviceMappings": [
+                    {
+                        "DeviceName": "/dev/sdm",
+                        "Ebs": {
+                            "VolumeType": "io1",
+                            "Iops": 200,
+                            "DeleteOnTermination": true,
+                            "VolumeSize": 20
+                        }
+                    }
+                ]
+            }
+        },
+        "MyEIP": {
+            "Type": "AWS::EC2::EIP",
+            "Properties": {
+                "InstanceId": {
+                    "Ref": "MyEC2Instance"
+                }
+            }
+        }
+    },
+    "Outputs": {
+      
+    }
+}
+
