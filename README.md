@@ -365,10 +365,6 @@ This rule permits public access over port `5432` which is the port used by Posgr
 $ aws rds create-db-instance --db-instance-identifier MyPostgresInstance --db-name add3_dev_db --db-instance-class db.t3.micro --engine postgres --vpc-security-group-ids sg-0aaa0cf72d9b56958 --master-username dbWebChain --master-user-password passAddArch2118 --allocated-storage 20
 ```
 
-
-
 __Learn More__    
 [Amazon VPC VPCs and Amazon RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.html)  
 [AWS CLI RDS Guide](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/rds/index.html)
-
-aws rds create-db-instance --db-instance-identifier MyPostgresInstance --db-name add3_dev_db --db-instance-class db.t3.micro --engine postgres  --master-username dbWebChain --master-user-password passAddArch2118 --allocated-storage 20

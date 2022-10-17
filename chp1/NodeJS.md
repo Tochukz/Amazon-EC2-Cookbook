@@ -8,7 +8,7 @@ Load the environment created by the downloaded NVM installer
 ```
 $ source ~/.profile  
 ```
-Now install noe using the nvm
+Now install now using the nvm
 ```
 $ nvm install node
 ```
