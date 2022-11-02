@@ -1,0 +1,18 @@
+[
+    {
+      "DeviceName": "string",
+      "VirtualName": "string",
+      "Ebs": {
+        "DeleteOnTermination": true|false,
+        "Iops": integer,
+        "SnapshotId": "string",
+        "VolumeSize": integer,
+        "VolumeType": "standard"|"io1"|"io2"|"gp2"|"sc1"|"st1"|"gp3",
+        "KmsKeyId": "string",
+        "Throughput": integer,
+        "OutpostArn": "string",
+        "Encrypted": true|false
+      },
+      "NoDevice": "string"
+    }
+]

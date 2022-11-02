@@ -1,0 +1,9 @@
+[
+    {
+      "DeviceName": "/dev/xvda",
+      "Ebs": {
+        "DeleteOnTermination": true,
+        "SnapshotId": "snap-09ae61c85f0440ead"
+      }
+    }
+]
